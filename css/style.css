@@ -1,0 +1,33 @@
+#map {
+    width: 100%;
+    height: 90vh;
+}
+
+#locate-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/gps-icon.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.leaflet-control-layers {
+    transition: opacity 0.3s ease;
+}
+.leaflet-control-layers.collapsed {
+    opacity: 0.5;
+}
+.leaflet-control-layers:hover {
+    opacity: 1;
+}

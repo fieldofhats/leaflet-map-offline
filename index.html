@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Leaflet Offline Map</title>
+</head>
+<body>
+    <div id="map"></div>
+    <button id="locate-btn" title="Toggle My Location"></button>
+    <div id="basemap-toggle" class="leaflet-control-container"></div>
+    <!-- Leaflet JS -->
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <!-- GeoTIFF JS -->
+    <script src="node_modules/geotiff/dist-browser/geotiff.js"></script>
+    <!-- GeoRaster JS -->
+    <script src="node_modules/georaster/dist/georaster.browser.bundle.min.js"></script>
+    <!-- GeoRaster Layer for Leaflet JS -->
+    <script src="node_modules/georaster-layer-for-leaflet/dist/georaster-layer-for-leaflet.min.js"></script>
+    <!-- Your custom script -->
+    <script src="js/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(error => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+        }
+    </script>
+</body>
+</html>
